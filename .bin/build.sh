@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-cd packages
-for package in *; do 
-    echo $package
-    docker build --tag "shpoont/whalebrew-${package}" --file "${package}/Dockerfile" .
+
+PACKAGES_FOLDER="packages"
+
+for PACKAGE_FOLDER in "${PACKAGES_FOLDER}/"*; do
+    PACKAGE_NAME="shpoont/whalebrew-${PACKAGE_FOLDER//$PACKAGES_FOLDER\//}"
+    echo "Building ${PACKAGE_NAME}.."
+    docker build --no-cache --pull --tag "${PACKAGE_NAME}" --file "${PACKAGE_FOLDER}/Dockerfile" .
 done
-cd - > /dev/null
