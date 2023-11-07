@@ -6,4 +6,4 @@ ADD ./entrypoint.sh /entrypoint.sh
 
 LABEL io.whalebrew.name kcov
 
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

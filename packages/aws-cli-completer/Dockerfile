@@ -5,4 +5,4 @@ LABEL io.whalebrew.name aws_completer
 LABEL io.whalebrew.config.environment '["COMP_KEY", "COMP_LINE", "COMP_POINT", "COMP_TYPE", "COMPREPLY"]'
 LABEL io.whalebrew.config.volumes ''
 
-ENTRYPOINT aws_completer
+ENTRYPOINT ["aws_completer"]

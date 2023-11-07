@@ -4,4 +4,4 @@ LABEL io.whalebrew.name aws-cli-bash
 
 ADD .bashrc /
 
-ENTRYPOINT bash
+ENTRYPOINT ["bash"]
